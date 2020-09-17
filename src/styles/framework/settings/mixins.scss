@@ -1,0 +1,155 @@
+@function em($pixels, $context: $base-font-size) {
+  @return #{$pixels/$context}em;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+  &:-moz-placeholder {
+    @content
+  }
+  &::-moz-placeholder {
+    @content
+  }
+  &:-ms-input-placeholder {
+    @content
+  }
+}
+
+// https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem($property, $values...) {
+  $max: length($values);
+  $pxValues: "";
+  $remValues: "";
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value * 10}px;
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  }
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+// Hide text
+@mixin hide-text($height: 1em) {
+  height: $height;
+  line-height: 1.5;
+  overflow: hidden;
+  &::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+}
+
+// Clearfix
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin ie-min-height {
+  &:after {
+    content: '';
+    min-height: inherit;
+    font-size: 0;
+  }
+}
+
+// Text overflow
+// Requires inline-block or block for proper styling
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Resize anything
+@mixin resizable($direction) {
+  resize: $direction; // Options: horizontal, vertical, both
+  overflow: auto; // Safari fix
+}
+
+@mixin line-break {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word; // <== Non standard for webkit
+  @include hyphens;
+}
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false, $display: swap ) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: $display;
+
+    @if $asset-pipeline == true {
+      src: font-url('#{$file-path}.eot');
+      src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff2') format('woff2'), font-url('#{$file-path}.ttf') format('truetype');
+    } @else {
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff2') format('woff2'), url('#{$file-path}.ttf') format('truetype');
+    }
+  }
+}
+
+@mixin img-responsive($offset: 100%, $innerContentClass: '-content') {
+  position: relative;
+  padding-bottom: #{$offset};
+
+  [class*=#{$innerContentClass}] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin opera-mini {
+  @at-root .app--operaMini {
+    @content;
+  }
+}
+
+@mixin ie {
+  @at-root .app--ie {
+    @content;
+  }
+}
+
+@mixin opera-row-in-col-fix {
+  [class*='col-'] {
+    [class*='row'] {
+      display: block;
+    }
+  }
+}
+
+@mixin opera-row-fix {
+  [class*='row'] {
+    display: block;
+  }
+}

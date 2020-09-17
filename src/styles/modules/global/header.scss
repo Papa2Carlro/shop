@@ -1,0 +1,108 @@
+.header {
+  background: $white_bg;
+  margin: map-get($spacers, 10) map-get($spacers, 5) 0;
+
+  border-radius: 5px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100%;
+  }
+
+  &__date {
+    display: flex;
+    align-items: flex-end;
+
+    font-family: Montserrat, sans-serif;
+    color: $gray11;
+
+    &-time {
+      @include s500-13;
+      line-height: 100%;
+
+      padding: 0 map-get($spacers, 5) 0 0;
+    }
+
+    &-week {
+      @include s500-9;
+      line-height: 100%;
+    }
+  }
+
+  &__close {
+    margin: 0 map-get($spacers, 15) 0 0;
+  }
+
+  &__user {
+    padding: 0 0 0 map-get($spacers, 20);
+
+    display: flex;
+    align-items: center;
+
+    &-avatar {
+      width: 60px;
+      height: 60px;
+
+      overflow: hidden;
+      border-radius: 50%;
+      cursor: pointer;
+
+      transition: all 0.3s 0s;
+
+      &:hover {
+        filter: grayscale(50%);
+      }
+    }
+
+    &-info {
+      padding: 0 0 0 map-get($spacers, 20);
+    }
+
+    &-role {
+      color: $gray7;
+      line-height: 100%;
+    }
+
+    &-name {
+      @include s600-11;
+      line-height: 100%;
+      color: $gray11;
+    }
+  }
+
+  &__central {
+    display: flex;
+    align-items: center;
+  }
+
+  &__setting {
+    margin: 0 map-get($spacers, 15) 0 0;
+
+    svg path {
+      transition: stroke 0.3s 0s;
+    }
+  }
+
+  &__hall {
+    width: 340px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: map-get($spacers, 5) 0;
+
+    border-radius: 100px;
+    background: rgba(55, 149, 213, 0.15);
+
+    &-label {
+      font-family: Montserrat, sans-serif;
+      @include s500-9;
+      color: $gray10;
+    }
+  }
+}

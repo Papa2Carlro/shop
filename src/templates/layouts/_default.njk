@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R-keeper | {{ title }}</title>
+  <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
+  <meta name="title" content="">
+  <meta name="description" content="">
+  <link rel="image_src" href="">
+
+  <meta property="og:title" content="">
+  <meta property="og:url" content="">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="">
+  <meta property="og:image" content=""/>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="fb:app_id" content="">
+
+  <meta name="twitter:card" content="">
+  <meta name="twitter:image" content="">
+
+  <meta name="mrc__share_title" content="">
+  <meta name="mrc__share_description" content="">
+
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,minimal-ui">
+  <style>
+    body {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+<div id="app" class="app {{ app_class }}">
+  {# app--operaMini #}
+  <div class="app-content">
+    <div class="icons-sprite">
+      {% include "includes/_icons-sprite.njk" %}
+    </div>
+
+    <div class="layout">
+      {% include "includes/_header.njk" %}
+
+      {% block content %}
+      {% endblock %}
+    </div>
+
+  </div>
+</div>
+</body>

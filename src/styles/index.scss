@@ -1,0 +1,22 @@
+// Base settings and grid.
+@import "framework";
+
+// Helpers
+@import "utilities";
+
+// UI elements
+@import "ui";
+
+// Elements
+@import "components";
+
+// Elements group
+@import "modules";
+
+// TODO: Need Refactoring for dynamic libs
+@import "~swiper/src/swiper";
+@import "~swiper/src/components/effect-fade/effect-fade";
+
+body {
+  opacity: 1;
+}

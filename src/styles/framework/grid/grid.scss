@@ -1,0 +1,40 @@
+.container, .container-fluid {
+  @each $breakpoint, $gutter in $grid-container-gutter-widths {
+    @include media-breakpoint-up($breakpoint) {
+      @include make-container($gutter);
+    }
+  }
+}
+
+.row {
+  @each $breakpoint, $gutter in $grid-gutter-widths {
+    @include media-breakpoint-up($breakpoint) {
+      @include make-row($gutter);
+    }
+  }
+
+  & > .col,
+  & > [class*='col-'] {
+    @each $breakpoint, $gutter in $grid-gutter-widths {
+      @include media-breakpoint-up($breakpoint) {
+        @include make-col-ready($gutter);
+      }
+    }
+  }
+}
+
+@each $breakpoint, $value in $grid-container-gutter-widths {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-container-gutter-widths);
+
+    .full-width#{$infix} {
+      margin-left: -$value/2;
+      margin-right: -$value/2;
+    }
+
+    .full-width#{$infix}-none {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,153 @@
+.icon {
+  display: block;
+  line-height: 1;
+
+  &-logo {
+    max-width: em(179);
+    max-height: em(30);
+    fill: currentColor;
+  }
+
+  &-logo-short {
+    max-width: em(50);
+    max-height: em(19);
+    fill: currentColor;
+  }
+
+  &-facebook {
+    max-width: 8px;
+    max-height: 14px;
+    fill: currentColor;
+  }
+
+  &-twitter {
+    max-width: 16px;
+    max-height: 14px;
+    fill: currentColor;
+  }
+
+  &-telegram {
+    max-width: 17px;
+    max-height: 14px;
+    fill: currentColor;
+  }
+
+  &-youtube {
+    max-width: 19px;
+    max-height: 13px;
+    fill: currentColor;
+  }
+
+  &-instagram {
+    max-width: 18px;
+    max-height: 18px;
+    fill: currentColor;
+  }
+
+  &-zipper {
+    max-width: 26px;
+    max-height: 20px;
+    fill: currentColor;
+  }
+
+  &-star {
+    max-width: em(16);
+    max-height: em(15);
+    fill: currentColor;
+  }
+
+  &-prize {
+    max-width: 16px;
+    max-height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+
+  &-video-play {
+    max-width: 50px;
+    max-height: 50px;
+    fill: currentColor;
+  }
+
+  &-search {
+    max-width: 15px;
+    max-height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+  }
+
+  &-globe {
+    max-width: 20px;
+    max-height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+
+  &-comment {
+    max-width: 16px;
+    max-height: 16px;
+    fill: currentColor;
+  }
+
+  &-burger {
+    max-width: 18px;
+    max-height: 17px;
+    fill: currentColor;
+  }
+
+  &-check {
+    max-width: 14px;
+    max-height: 10px;
+    fill: currentColor;
+    stroke: currentColor;
+  }
+
+  &-chevron {
+    max-width: 10px;
+    max-height: 10px;
+    fill: currentColor;
+  }
+
+  &-close {
+    max-width: 16px;
+    max-height: 16px;
+    fill: currentColor;
+  }
+
+  &-dots {
+    max-width: 12px;
+    max-height: 16px;
+    fill: currentColor;
+  }
+
+  @include media-breakpoint-down(md) {
+    &-logo {
+      max-width: em(100);
+      max-height: em(16.5);
+    }
+    &-prize {
+      max-width: em(11);
+      max-height: em(10);
+    }
+    &-star {
+      max-width: 11px;
+      max-height: 10px;
+    }
+    &-zipper {
+      max-width: em(21);
+      max-height: em(16);
+    }
+    &-globe {
+      max-width: em(13);
+      max-height: em(13);
+    }
+    &-search {
+      max-width: em(14);
+      max-height: em(15);
+      stroke-width: 1.5;
+    }
+  }
+}

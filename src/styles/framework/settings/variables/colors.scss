@@ -1,0 +1,237 @@
+//Gray
+//
+$gray1: #fff;
+$gray2: #fcfcfc;
+$gray3: #f9f9f9;
+$gray4: #f4f4f4;
+$gray5: #cecece;
+$gray6: #d7d7d7;
+$gray7: #b9b9b9;
+$gray8: #949494;
+$gray9: #6c6c6c;
+$gray10: #474747;
+$gray11: #1c1c1c;
+$gray12: #0E0E0E;
+$gray13: #000;
+
+$grays: ();
+$grays: map-merge(
+    (
+      "1": $gray1,
+      "2": $gray2,
+      "3": $gray3,
+      "4": $gray4,
+      "5": $gray5,
+      "6": $gray6,
+      "7": $gray7,
+      "8": $gray8,
+      "9": $gray9,
+      "10": $gray10,
+      "11": $gray11,
+      "12": $gray12,
+      "13": $gray13
+    ),
+    $grays
+);
+
+//Red
+//
+$red1: #ffeeee;
+$red2: #ffd7d7;
+$red3: #fec1c1;
+$red4: #fc9292;
+$red5: #f96363;
+$red6: #f33737;
+$red7: #ea1010;
+$red8: #dc0000; //default
+$red9: #ca0000;
+$red10: #af0000;
+$red11: #8b0000;
+$red12: #5b0000;
+$red13: #240000;
+
+$reds: ();
+$reds: map-merge(
+    (
+      "1": $red1,
+      "2": $red2,
+      "3": $red3,
+      "4": $red4,
+      "5": $red5,
+      "6": $red6,
+      "7": $red7,
+      "8": $red8,
+      "9": $red9,
+      "10": $red10,
+      "11": $red11,
+      "12": $red12,
+      "13": $red13
+    ),
+    $reds
+);
+
+//Blue
+//
+$blue1: #F0F6FF;
+$blue2: #DEEBFD;
+$blue3: #CCDFFC;
+$blue4: #A7C6F7;
+$blue5: #82ACEF;
+$blue6: #5F91E4;
+$blue7: #4076D6;
+$blue8: #275DC3;
+$blue9: #1446AC; //default
+$blue10: #09328F;
+$blue11: #03216E;
+$blue12: #001349;
+$blue13: #000824;
+
+$blue14: #063D61;
+$blue15: #29587A;
+$blue16: #1974B0;
+$blue17: #2E87C1;
+$blue18: #3891FF;
+$blue19: #3795D5;
+$blue20: #4CC3F8;
+
+$blues: ();
+$blues: map-merge(
+    (
+      "1": $blue1,
+      "2": $blue2,
+      "3": $blue3,
+      "4": $blue4,
+      "5": $blue5,
+      "6": $blue6,
+      "7": $blue7,
+      "8": $blue8,
+      "9": $blue9,
+      "10": $blue10,
+      "11": $blue11,
+      "12": $blue12,
+      "13": $blue13,
+      "14": $blue14,
+      "15": $blue15,
+      "16": $blue16,
+      "17": $blue17,
+      "18": $blue18,
+      "19": $blue19,
+      "20": $blue20,
+    ),
+    $blues
+);
+
+//Green
+//
+$green1: #EAF5E8;
+$green2: #D3F4CD;
+$green3: #BCF3B3;
+$green4: #8EEF7E;
+$green5: #62E64E;
+$green6: #3CD926;
+$green7: #1DC608; //default
+$green8: #10AF00;
+$green9: #0A9400;
+$green10: #047700;
+$green11: #015800;
+$green12: #003A01;
+$green13: #001C01;
+
+$greens: ();
+$greens: map-merge(
+    (
+      "1": $green1,
+      "2": $green2,
+      "3": $green3,
+      "4": $green4,
+      "5": $green5,
+      "6": $green6,
+      "7": $green7,
+      "8": $green8,
+      "9": $green9,
+      "10": $green10,
+      "11": $green11,
+      "12": $green12,
+      "13": $green13
+    ),
+    $greens
+);
+
+//Light Green
+//
+$l_green1: #51CBAF;
+$l_green2: #0EC295;
+$l_green3: #0CAC7D;
+
+$l_greens: ();
+$l_greens: map-merge(
+    (
+      '1': $l_green1,
+      '2': $l_green2,
+      '3': $l_green3
+    ),
+    $l_greens
+);
+
+$blue: $blue9;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: $red8;
+$orange: #fd7e14;
+$yellow: #FFBF1C;
+$green: $green7;
+$teal: #20c997;
+$cyan: #17a2b8;
+
+$colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+    (
+      "blue": $blue,
+      "indigo": $indigo,
+      "purple": $purple,
+      "pink": $pink,
+      "red": $red,
+      "orange": $orange,
+      "yellow": $yellow,
+      "green": $green,
+      "teal": $teal,
+      "cyan": $cyan,
+      "white": $white,
+      "gray": $gray6,
+      "gray-dark": $gray8
+    ),
+    $colors
+);
+
+$primary: $green;
+$secondary: $gray6;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray1;
+$dark: $gray8;
+
+$gold: #FFCA41;
+$silver: #979797;
+$bronze: #B55916;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+    (
+      "primary": $primary,
+      "secondary": $secondary,
+      "dark": $dark,
+      "white": $white,
+      "black": $black,
+      "yellow": $yellow
+    ),
+    $theme-colors
+);
+
+$body-color: $black;
+
+$btnDisabledBackground: #F4F7F9;
+$btnDisabledColor: #CDD7E0;

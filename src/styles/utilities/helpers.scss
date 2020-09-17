@@ -1,0 +1,44 @@
+.fit {
+  width: 100%;
+  height: 100%;
+  vertical-align: inherit;
+  object-fit: cover;
+  font-family: 'object-fit: cover;';
+
+  &-contain {
+    object-fit: contain;
+    font-family: 'object-fit: contain;';
+  }
+
+  &-top {
+    object-position: top;
+    font-family: 'object-fit: cover; object-position: top;';
+  }
+}
+
+.icons-sprite {
+  display: none;
+}
+
+.list-unstyled {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-unstyled {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.img-responsive {
+  @include img-responsive();
+}

@@ -1,0 +1,229 @@
+{% set title = "UI" %}
+{% set app_class = "app--ui" %}
+{% extends "layouts/_default.njk" %}
+
+{% import "components/_index.njk" as components %}
+
+{% block content %}
+
+  <main class="layout" role="main">
+    <section class="section py-25">
+      <div class="container">
+        <div class="row mb-20">
+          <div class="col">
+            <div class="section__label">
+              <h2 class="h1">
+                Grid
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-18">
+            <div class="bg-dark text-white p-15">
+              1/1
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-4">
+            <div class="bg-dark text-white p-15">
+              4/18
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="bg-dark text-white p-15">
+              4/18
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="bg-dark text-white p-15">
+              4/18
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="bg-dark text-white p-15">
+              6/18
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-3">
+            <div class="bg-dark text-white p-15">3/18</div>
+          </div>
+          <div class="col-3">
+            <div class="bg-dark text-white p-15">3/18</div>
+          </div>
+          <div class="col-3">
+            <div class="bg-dark text-white p-15">3/18</div>
+          </div>
+          <div class="col-3">
+            <div class="bg-dark text-white p-15">3/18</div>
+          </div>
+          <div class="col-6">
+            <div class="bg-dark text-white p-15">6/18</div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-4">
+            <div class="bg-dark text-white px-15 py-50 mb-4">1</div>
+            <div class="bg-dark text-white p-15 mb-4">2</div>
+          </div>
+          <div class="col-4">
+            <div class="bg-dark text-white p-15 mb-4">3</div>
+            <div class="bg-dark text-white p-15 mb-4">4</div>
+            <div class="bg-dark text-white p-15 mb-4">5</div>
+          </div>
+          <div class="col-4">
+            <div class="bg-dark text-white p-15 mb-4">6</div>
+            <div class="bg-dark text-white p-15 mb-4">7</div>
+            <div class="bg-dark text-white p-15 mb-4">8</div>
+          </div>
+          <div class="col-6">
+            <div class="bg-dark text-white px-15 py-80 mb-4">9</div>
+          </div>
+        </div>
+        <div class="row row-cols-5">
+          <div class="col">
+            <div class="bg-dark text-white p-15">1/5</div>
+          </div>
+          <div class="col">
+            <div class="bg-dark text-white p-15">1/5</div>
+          </div>
+          <div class="col">
+            <div class="bg-dark text-white p-15">1/5</div>
+          </div>
+          <div class="col">
+            <div class="bg-dark text-white p-15">1/5</div>
+          </div>
+          <div class="col">
+            <div class="bg-dark text-white p-15">1/5</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section py-25">
+      <div class="container">
+        <div class="row mb-20">
+          <div class="col">
+            <div class="section__label">
+              <h2 class="h1">
+                Spacing
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <span class="bg-dark text-white py-8 pr-4 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-8 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-10 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-15 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-20 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-25 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-30 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-40 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-50 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-70 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-80 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-100 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-120 mr-8"></span>
+            <span class="bg-dark text-white py-8 pr-150 mr-8"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section py-25">
+      <div class="container">
+        <div class="row mb-20">
+          <div class="col">
+            <div class="section__label">
+              <h2 class="h1">
+                Utilities class
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-18">
+            <p>.full-width-xs</p>
+            <p>.full-width-sm</p>
+            <p>.full-width-md</p>
+            <p>.full-width-xs-none</p>
+            <p>.full-width-sm-none</p>
+            <p>.full-width-md-none</p>
+          </div>
+          <div class="col-18 col-md-6">
+            <div class="full-width-xs full-width-md-none">
+              <div class="bg-dark text-white py-100 px-10 w-100">
+                <div class="content">
+                  Full width from xs to md.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section py-25">
+      <div class="container">
+        <div class="row mb-20">
+          <div class="col">
+            <div class="section__label">
+              <h2 class="h1">
+                Typography
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <h1 class="test-title-s400-10">
+              Test title with mixin font-size s400-10
+            </h1>
+            <h2 class="test-title-s500-9">
+              Test title with mixin font-size s500-9
+            </h2>
+            <h3 class="test-title-s700-7">
+              Test title with mixin font-size s700-7
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section py-25">
+      <div class="container">
+        <div class="row mb-20">
+          <div class="col">
+            <div class="section__label">
+              <h2 class="h1">
+                Links
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4 bg-gray">
+          <div class="col-12 pb-10">
+            <div>.link</div>
+            <a href="" class="link">
+              by Jeff Dickerson
+            </a>
+          </div>
+          <div class="col-12 pb-10">
+            <div>.link--gray</div>
+            <a href="" class="link link--grey">
+              by Jeff Dickerson
+            </a>
+          </div>
+          <div class="col-12 pb-10">
+            <div>.link--white</div>
+            <a href="" class="link link--white">
+              by Jeff Dickerson
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{% endblock %}

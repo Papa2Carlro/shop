@@ -1,0 +1,51 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+a {
+  color: currentColor;
+
+  &:active {
+    color: $gray10;
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    &:hover {
+      color: $gray10;
+      text-decoration: none;
+    }
+  }
+}
+
+input, button, [role="button"] {
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $gray9;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+}

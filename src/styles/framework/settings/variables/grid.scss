@@ -1,0 +1,40 @@
+// Grid breakpoints
+//
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1310px
+);
+
+// Grid containers
+//
+$container-max-widths: (
+        xs: 100%,
+        sm: 100%,
+        md: 100%,
+        lg: 100%,
+        xl: 1260px
+);
+
+// Grid columns
+//
+// - container gutter
+$grid-container-gutter-widths: (
+        xs: 40px,
+        sm: 40px,
+        md: 40px,
+        lg: 30px,
+);
+
+// - grid gutter
+$grid-gutter-widths: (
+        xs: 10px,
+        sm: 10px,
+        lg: 10px
+);
+
+$grid-columns:                18;
+$grid-gutter-width: map-get($grid-gutter-widths, lg);
+$grid-row-columns:            7;
