@@ -60,53 +60,18 @@ $teal: #20c997;
 $cyan: #17a2b8;
 
 $colors: ();
-// stylelint-disable-next-line scss/dollar-variable-default
 $colors: map-merge(
     (
       "blue": $blue,
       "indigo": $indigo,
       "purple": $purple,
       "pink": $pink,
-      "red": $red,
       "orange": $orange,
       "yellow": $yellow,
-      "green": $green,
       "teal": $teal,
       "cyan": $cyan,
-      "white": $white,
       "gray": $gray6,
       "gray-dark": $gray8
     ),
     $colors
 );
-
-$primary: $green;
-$secondary: $gray6;
-$success: $green;
-$info: $cyan;
-$warning: $yellow;
-$danger: $red;
-$light: $gray1;
-$dark: $gray8;
-
-$gold: #FFCA41;
-$silver: #979797;
-$bronze: #B55916;
-
-$theme-colors: ();
-$theme-colors: map-merge(
-    (
-      "primary": $primary,
-      "secondary": $secondary,
-      "dark": $dark,
-      "white": $white,
-      "black": $black,
-      "yellow": $yellow
-    ),
-    $theme-colors
-);
-
-$body-color: $black;
-
-$btnDisabledBackground: #F4F7F9;
-$btnDisabledColor: #CDD7E0;
