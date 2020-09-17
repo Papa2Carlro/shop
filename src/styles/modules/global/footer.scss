@@ -1,7 +1,74 @@
 .footer {
-
+  background-color: $gray2;
 
   &__line {
+    height: 45px;
 
+    background-color: $gray14;
+
+    .container {
+      height: 100%;
+    }
+  }
+
+  &__banner {
+    padding: 0 0 map-get($spacers, 60);
+
+    &-item {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      height: 200px;
+
+      color: $white;
+      background-color: $gray14;
+
+      line-height: 48px;
+      text-transform: uppercase;
+    }
+
+    &-title {
+      @include s600-13;
+      letter-spacing: 1.8px;
+    }
+
+    &-text {
+      @include s300-13;
+      letter-spacing: 1.8px;
+    }
+
+    &-social {
+      @include s400-11;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: 200px;
+
+      color: $white;
+      background-color: $blue1;
+
+      .fi + .fi {
+        margin: 0 0 0 map-get($spacers, 50);
+      }
+    }
+  }
+
+  &__copy {
+    @include list-unstyled;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100%;
+
+    &-label {
+      color: $gray7;
+      @include s400-6;
+    }
   }
 }

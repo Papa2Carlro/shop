@@ -1,10 +1,7 @@
-@include font-face("Source Sans Pro", "/static/fonts/SourceSansPro/SourceSansPro-Regular/SourceSansPro-Regular", normal, normal);
-@include font-face("Source Sans Pro", "/static/fonts/SourceSansPro/SourceSansPro-SemiBold/SourceSansPro-SemiBold", 600, normal);
-
 @include font-face("Montserrat", "/static/fonts/Montserrat/Montserrat-Regular/Montserrat-Regular", normal, normal);
-@include font-face("Montserrat", "/static/fonts/Montserrat/Montserrat-Medium/Montserrat-Medium", 500, normal);
+@include font-face("Montserrat", "/static/fonts/Montserrat/Montserrat-Bold/Montserrat-Bold", 600, normal);
+@include font-face("Montserrat", "/static/fonts/Montserrat/Montserrat-Lighft/Montserrat-Light", 300, normal);
 
 @include font-face("Roboto", "/static/fonts/Roboto/Roboto-Regular/Roboto-Regular", normal, normal);
-@include font-face("Roboto Condensed", "/static/fonts/RobotoCondensed/RobotoCondensed-Regular/RobotoCondensed-Regular", normal, normal);
 
-@include font-face("OpenSans", "/static/fonts/OpenSans/OpenSans-SemiBold", 600, normal);
+@include font-face("Roboto", "/static/fonts/Roboto/Roboto-Regular/Roboto-Regular", normal, normal);

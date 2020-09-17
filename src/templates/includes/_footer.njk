@@ -1,7 +1,61 @@
+{% set developer = {
+  name: 'Max Priymak',
+  url: 'https://github.com/Papa2Carlro',
+  copy: '© 2016 Avenue Fashion™'
+} %}
+{% set socials = [
+  {
+    class: 'facebook-1',
+    router: '#'
+  },
+  {
+    class: 'twitter-1',
+    router: '#'
+  },
+  {
+    class: 'instagram',
+    router: '#'
+  },
+  {
+    class: 'pinterest',
+    router: '#'
+  }] %}
+
 <div class="footer">
+  <div class="container">
+
+    <div class="footer__banner">
+      <div class="row">
+        <div class="col-6">
+          <a href="#" class="footer__banner-item">
+            <div class="footer__banner-title link">award winner</div>
+            <div class="footer__banner-text link">fashion awards 2016</div>
+          </a>
+        </div>
+
+        <div class="col-6">
+          <div class="footer__banner-social">
+            {% for social in socials %}
+              <a href="{{ social.router }}" class="fi flaticon-{{ social.class }} link"></a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="footer__line">
     <div class="container">
+
+      <ul class="footer__copy">
+        <li class="footer__copy-item">
+          <span class="footer__copy-label">{{ developer.copy }}</span>
+        </li>
+
+        <li class="footer__copy-item">
+          <a href="{{ developer.url }}" target="_blank" class="footer__copy-label link">Dev by {{ developer.name }}</a>
+        </li>
+      </ul>
 
     </div>
   </div>
