@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>R-keeper | {{ title }}</title>
+  <title>Shop | {{ title }}</title>
   <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
   <meta name="title" content="">
   <meta name="description" content="">
@@ -35,18 +35,18 @@
 </head>
 <body>
 <div id="app" class="app {{ app_class }}">
-  {# app--operaMini #}
+
   <div class="app-content">
     <div class="icons-sprite">
       {% include "includes/_icons-sprite.njk" %}
     </div>
 
-    <div class="layout">
-      {% include "includes/_header.njk" %}
+    {% include "includes/_header.njk" %}
 
-      {% block content %}
-      {% endblock %}
-    </div>
+    {% block content %}
+    {% endblock %}
+
+    {% include "includes/_footer.njk" %}
 
   </div>
 </div>
