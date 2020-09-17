@@ -1,0 +1,11 @@
+@mixin grid-make-template-columns($columns: 2, $columnMin: auto, $columnMax: 1fr) {
+  grid-template-columns: repeat($columns, minmax($columnMin, $columnMax));
+}
+
+@mixin grid-make-col($count: 1) {
+  grid-column-end: span #{$count};
+}
+
+@mixin grid-make-row($count: 1) {
+  grid-row-end: span #{$count};
+}

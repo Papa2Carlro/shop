@@ -1,0 +1,89 @@
+.masonry {
+  $parent: &;
+  display: grid;
+  grid-gap: 0 map-get($spacers, 30);
+  @include grid-make-template-columns();
+
+  &__item {
+    position: relative;
+    @include grid-make-col(1);
+
+    &--c_2 {
+      @include grid-make-col(2);
+    }
+
+    &--r_2 {
+      @include grid-make-row(2);
+    }
+
+    &--r_4 {
+      @include grid-make-row(4);
+    }
+  }
+
+  &--test {
+    counter-reset: masonry;
+
+    #{$parent} {
+      &__item {
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 100;
+          counter-increment: masonry;
+          content: counter(masonry) ") ";
+          font-weight: bold;
+          font-size: 30px;
+          color: red;
+          background: white;
+        }
+      }
+    }
+  }
+
+  &--c_4 {
+    @include grid-make-template-columns(4);
+  }
+
+  @include media-breakpoint-down(md) {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+      width: 100%;
+      order: 1 !important;
+    }
+  }
+}
+
+
+@include ie {
+  .masonry {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    $parent: '.masonry';
+
+    &__item {
+      width: 50%;
+      padding: 0 15px;
+
+      &--c_2 {
+        width: 100%;
+      }
+    }
+
+    &--c_4 {
+      #{$parent} {
+        &__item {
+          width: 25%;
+
+          &--c_2 {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -31,10 +31,10 @@ $grid-container-gutter-widths: (
 // - grid gutter
 $grid-gutter-widths: (
         xs: 10px,
-        sm: 10px,
-        lg: 10px
+        sm: 20px,
+        lg: 30px
 );
 
-$grid-columns:                18;
+$grid-columns:                12;
 $grid-gutter-width: map-get($grid-gutter-widths, lg);
 $grid-row-columns:            7;
