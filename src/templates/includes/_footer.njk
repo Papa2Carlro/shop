@@ -20,20 +20,154 @@
     class: 'pinterest',
     router: '#'
   }] %}
+{% set footerLink = [
+  {
+    title: 'Information',
+    list: [
+    {
+      label: 'The brand',
+      router: '#'
+    },
+    {
+      label: 'Local stores',
+      router: '#'
+    },
+    {
+      label: 'Customer service',
+      router: '#'
+    },
+    {
+      label: 'Privacy & cookies',
+      router: '#'
+    },
+    {
+      label: 'Site map',
+      router: '#'
+    }
+  ]
+  },
+  {
+    title: 'Why buy from us',
+    list: [
+    {
+      label: 'Shipping & returns',
+      router: '#'
+    },
+    {
+      label: 'Secure shopping',
+      router: '#'
+    },
+    {
+      label: 'Testimonials',
+      router: '#'
+    },
+    {
+      label: 'Award winning',
+      router: '#'
+    },
+    {
+      label: 'Ethical trading',
+      router: '#'
+    }
+  ]
+  },
+  {
+    title: 'Your account',
+    list: [
+    {
+      label: 'Sign in',
+      router: '#'
+    },
+    {
+      label: 'Register',
+      router: '#'
+    },
+    {
+      label: 'View cart',
+      router: '#'
+    },
+    {
+      label: 'View your lookbook',
+      router: '#'
+    },
+    {
+      label: 'Track an order',
+      router: '#'
+    },
+    {
+      label: 'Update information',
+      router: '#'
+    }
+  ]
+  },
+  {
+    title: 'Lookbook',
+    list: [
+    {
+      label: 'Latest posts',
+      router: '#'
+    },
+    {
+      label: 'Men’s lookbook',
+      router: '#'
+    },
+    {
+      label: 'Women’s lookbook',
+      router: '#'
+    },
+    {
+      label: 'Lookbooks RSS feed',
+      router: '#'
+    },
+    {
+      label: 'View your lookbook',
+      router: '#'
+    },
+    {
+      label: 'Delete your lookbook',
+      router: '#'
+    }
+  ]
+  }
+] %}
 
 <div class="footer">
   <div class="container">
 
+    <ul class="footer__list">
+      {% for group in footerLink %}
+        <li class="footer__list-item">
+          <div class="footer__list-title">{{ group.title }}</div>
+
+          <ol class="footer__l2list">
+            {% for link in group.list %}
+              <li class="footer__l2list-item"><a href="{{ link.router }}" class="link">{{ link.label }}</a></li>
+            {% endfor %}
+          </ol>
+        </li>
+      {% endfor %}
+
+      <li class="footer__list-item">
+        <div class="footer__list-title">contact details</div>
+
+        <ol class="footer__l2list">
+            <li class="footer__l2list-item"><a href="#" class="link"><b>Head Office:</b> Avenue Fashion, <br> 180-182 Regent Street, London.</a></li>
+            <li class="footer__l2list-item"><a href="#" class="link"><b>Telephone:</b> 0123-456-789</a></li>
+            <li class="footer__l2list-item"><a href="#" class="link"><b>Email:</b> support@yourwebsite.com</a></li>
+        </ol>
+      </li>
+    </ul>
+
     <div class="footer__banner">
       <div class="row">
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
           <a href="#" class="footer__banner-item">
             <div class="footer__banner-title link">award winner</div>
             <div class="footer__banner-text link">fashion awards 2016</div>
           </a>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
           <div class="footer__banner-social">
             {% for social in socials %}
               <a href="{{ social.router }}" class="fi flaticon-{{ social.class }} link"></a>

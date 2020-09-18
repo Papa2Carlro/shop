@@ -71,4 +71,51 @@
       @include s400-6;
     }
   }
+
+  &__list {
+    @include list-unstyled;
+    padding: map-get($spacers, 45) 0 map-get($spacers, 60);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &-title {
+      @include s500-6;
+
+      padding: map-get($spacers, 15) 0 map-get($spacers, 30);
+
+      color: $gray12;
+      text-transform: uppercase;
+    }
+
+    &-item {
+      @include s300-6;
+
+      color: $gray11;
+    }
+  }
+
+  &__l2list {
+    @include list-unstyled;
+
+    &-item {
+
+      & + & {
+        margin: map-get($spacers, 8) 0 0 ;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__banner-item {
+      margin: 0 0 map-get($spacers, 15);
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__banner-item {
+      margin: 0 0 map-get($spacers, 10);
+    }
+  }
 }
