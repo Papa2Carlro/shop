@@ -2,7 +2,7 @@
   background-color: $gray2;
 
   &__line {
-    height: 45px;
+    height: $line;
 
     background-color: $gray14;
 
@@ -92,6 +92,7 @@
     &-item {
       @include s300-6;
 
+      padding: 0 map-get($spacers, 10) 0 0;
       color: $gray11;
     }
   }

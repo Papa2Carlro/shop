@@ -1,0 +1,16 @@
+.input {
+  border: 1px solid $gray4;
+  background-color: $gray2;
+
+  &--search {
+    padding: 0 map-get($spacers, 10);
+
+    width: 190px;
+    height: 30px;
+
+    &::placeholder {
+      @include s400-6;
+      color: $gray6;
+    }
+  }
+}

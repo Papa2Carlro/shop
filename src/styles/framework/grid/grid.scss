@@ -6,6 +6,10 @@
   }
 }
 
+.container--xxl {
+  max-width: 1781px;
+}
+
 .row {
   @each $breakpoint, $gutter in $grid-gutter-widths {
     @include media-breakpoint-up($breakpoint) {

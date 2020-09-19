@@ -1,6 +1,6 @@
 .header {
   &__line {
-    height: 45px;
+    height: $line;
 
     background-color: $gray14;
 
@@ -19,6 +19,20 @@
 
   &__actions {
     height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    &-link {
+      @include s400-6;
+      color: $gray7;
+
+      padding: 0 map-get($spacers, 80) 0 0;
+
+      .link + .link {
+        padding: 0 0 0 map-get($spacers, 20);
+      }
+    }
   }
 
   &__card {
@@ -35,6 +49,47 @@
 
     &-icon {
       padding: 0 map-get($spacers, 20) 0 0;
+    }
+  }
+
+  // Body
+  &__body {
+    display: flex;
+    align-items: flex-start;
+
+    padding: map-get($spacers, 40) 0;
+  }
+
+  &__nav {
+    margin: 0 0 0 auto;
+
+    &-list {
+      @include list-unstyled;
+    }
+
+    &-item {
+
+    }
+  }
+
+  &__search {
+    position: relative;
+
+    padding: 0 0 0 map-get($spacers, 110);
+
+    &-submit {
+      @extend .btn-unstyled;
+
+      position: absolute;
+      top: map-get($spacers, 8);
+      right: map-get($spacers, 10);
+
+      color: $gray6;
+
+      &:hover {
+        transition: color $transTimeFast $easeDefault;
+        color: $gray11;
+      }
     }
   }
 }

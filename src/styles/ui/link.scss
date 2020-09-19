@@ -1,3 +1,28 @@
 .link {
-  transition: color $transTimeFast $easeInOut;
+  color: currentColor;
+  transition: color $transTimeFast $easeDefault;
+
+  &:active {
+    color: $gray10;
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    &:hover {
+      color: $gray10;
+      text-decoration: none;
+    }
+  }
+
+  &--blue {
+    color: currentColor;
+    transition: color $transTimeFast $easeDefault;
+
+    @include media-breakpoint-up(md) {
+      &:hover {
+        color: $blue1;
+        text-decoration: none;
+      }
+    }
+  }
 }
