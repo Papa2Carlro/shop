@@ -1,0 +1,21 @@
+.breadcrumbs {
+  @include s400-6;
+
+  color: $gray8;
+
+  display: flex;
+
+  &__item {
+    & + & {
+      &:before {
+        content: '/';
+        color: $gray8;
+        padding: 0 map-get($spacers, 10);
+      }
+    }
+    &:last-child {
+      color: $gray9;
+      @include s500-6;
+    }
+  }
+}

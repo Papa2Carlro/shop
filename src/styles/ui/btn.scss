@@ -1,0 +1,88 @@
+.btn {
+  $parent: &;
+  @extend .btn-unstyled;
+
+  transition: all $transTimeFast $easeDefault;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  &__icon {
+    padding: 0 12px 0 0;
+
+    .icon {
+      width: 18px;
+      height: 16px;
+      fill: $gray13;
+    }
+  }
+
+  &__label {
+    @include s500-7;
+
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+  }
+
+  &--xl {
+    padding: map-get($spacers, 20) 0;
+  }
+
+  &--dark {
+    border: 2px solid transparent;
+    background-color: $blue1;
+
+    &:hover {
+      background-color: $gray14;
+    }
+
+    #{$parent} {
+      &__icon {
+        .icon {
+          fill: $white;
+        }
+      }
+
+      &__label {
+        color: $white;
+      }
+    }
+  }
+
+  &--blue {
+    border: 2px solid $gray10;
+    background-color: transparent;
+
+    &:hover {
+      border-color: transparent;
+      background-color: $blue1;
+
+      #{$parent} {
+        &__icon {
+          .icon {
+            fill: $white;
+          }
+        }
+
+        &__label {
+          color: $white;
+        }
+      }
+    }
+
+    #{$parent} {
+      &__icon {
+        .icon {
+          fill: $gray13;
+        }
+      }
+
+      &__label {
+        color: $gray13;
+      }
+    }
+  }
+}

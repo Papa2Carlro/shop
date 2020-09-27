@@ -1,24 +1,54 @@
 .icon {
   display: block;
   line-height: 1;
+  transition: all $transTimeFast $easeDefault;
 
   &-card {
     width: 20px;
     height: 18px;
     fill: currentColor;
   }
-
   &-chevron {
     width: 20px;
     height: 20px;
     fill: currentColor;
     stroke: currentColor;
   }
-
+  &-miniChevron {
+    width: 20px;
+    height: 15px;
+    fill: currentColor;
+    stroke: currentColor;
+  }
   &-search {
     width: 13px;
     height: 16px;
     fill: currentColor;
     stroke: currentColor;
+  }
+  &-arrowLeft {
+    width: 22px;
+    height: 20px;
+    fill: currentColor;
+    stroke: currentColor;
+  }
+  &-profile {
+    width: 24px;
+    height: 24px;
+    padding: 3px;
+    fill: #24242c;
+    stroke: #24242c;
+  }
+  &-close {
+    width: 26px;
+    height: 26px;
+    padding: 3px;
+    fill: #24242c;
+    stroke: #24242c;
+  }
+  &-star {
+    width: 18px;
+    height: 18px;
+    fill: $gray4;
   }
 }

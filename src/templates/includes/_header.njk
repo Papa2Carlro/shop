@@ -1,3 +1,5 @@
+{% import "components/_index.njk" as components %}
+
 <div class="header">
   <div class="header__line">
     <div class="container">
@@ -35,15 +37,11 @@
 
   <div class="container container--xxl">
     <div class="header__body">
-      <a href="#" class="header__logo">
+      <a href="/" class="header__logo">
         <img src="static/img/stub/logo.png" alt="">
       </a>
 
-      <nav class="header__nav">
-        <ul class="header__nav-list">
-          <li class="header__nav-item"></li>
-        </ul>
-      </nav>
+      {{ components.navigation('header') }}
 
       <div class="header__search">
         <form action="#" class="header__search-form">
@@ -57,6 +55,81 @@
           </button>
         </form>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="header-mobile">
+  <ul class="header-mobile__actions">
+    <li class="header-mobile__actions-item">
+      <a href="" class="link link--blue header-mobile__actions-btn">
+        <svg class="icon">
+          <use xlink:href="#icon-burger"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="header-mobile__actions-item">
+      <a href="" class="link link--blue header-mobile__actions-btn">
+        <svg class="icon">
+          <use xlink:href="#icon-search-mobile"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+
+  <a href="/" class="header-mobile__logo link link--white">
+    <span class="header-mobile__logo-title">avenue</span>
+    <span class="header-mobile__logo-text">fashion</span>
+  </a>
+
+  <ul class="header-mobile__actions">
+    <li class="header-mobile__actions-item">
+      <a href="" class="link link--blue header-mobile__actions-btn">
+        <svg class="icon">
+          <use xlink:href="#icon-profile-mobile"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="header-mobile__actions-item">
+      <a href="" class="link link--blue header-mobile__actions-btn">
+        <svg class="icon">
+          <use xlink:href="#icon-basked-mobile"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+
+  <form class="header-mobile__search">
+    <div class="header-mobile__search-close">
+      <svg class="icon icon-arrowLeft">
+        <use xlink:href="#icon-arrow-left"></use>
+      </svg>
+    </div>
+    <input class="header-mobile__search-input" placeholder="Search..." type="text">
+  </form>
+</div>
+
+<div class="menu-mobile">
+  <div class="menu-mobile__panel">
+    <div class="menu-mobile__header">
+      <a href="#" class="menu-mobile__sign-in link">
+        <div class="menu-mobile__sign-in-icon">
+          <svg class="icon icon-profile">
+            <use xlink:href="#icon-profile-mobile"></use>
+          </svg>
+        </div>
+        <div class="menu-mobile__sign-in-label">Sign in</div>
+      </a>
+
+      <div class="menu-mobile__close">
+        <svg class="icon icon-close">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+      </div>
+    </div>
+
+    <div class="menu-mobile__body">
+
     </div>
   </div>
 </div>

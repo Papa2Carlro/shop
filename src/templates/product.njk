@@ -1,0 +1,268 @@
+{% set title = "Product" %}
+{% set app_class = "app--home" %}
+
+{% extends "layouts/_default.njk" %}
+{% import "components/_index.njk" as components %}
+
+{% set breadcrumbsList = [
+  {
+    label: 'Mens',
+    router: '#'
+  },
+  {
+    label: 'Casuals',
+    router: '#'
+  },
+  {
+    label: 'Hoodies & sweatshirts',
+    router: '#'
+  },
+  {
+    label: 'Ave classic sweatshirt'
+  }
+] %}
+
+{% set product = {
+  image: 'static/img/stub/product.webp',
+  title: 'Ave classic sweatshirt',
+  rate: {
+    length: 5,
+    marked: 3
+  },
+  price: {
+    origin: 89.99,
+    old: 107
+  },
+  attributes: [
+    {
+      title: 'Availability',
+      description: 'In stock'
+    },
+    {
+      title: 'Product Code',
+      description: '#499577'
+    },
+    {
+      title: 'Tags',
+      tags: [
+      {
+        label: 'Classic',
+        route: '#'
+      },
+      {
+        label: 'Casual',
+        route: '#'
+      },
+      {
+        label: 'V-neck',
+        route: '#'
+      },
+      {
+        label: 'Loose',
+        route: '#'
+      }]
+    }
+  ],
+  shortDescription: 'Donec sem lorem laoreet tempor un risus vitae, rutrum sodales nibh suspendisse est congue metus nunc, id viverra elit loreti rhoncus quis consecteur es. Donec pulvinar tempor lorem a pretium justo interdum.',
+  benefits: [
+    'Elasticated cuffs',
+    'Casual fit',
+    '100% Cotton',
+    'Free shipping with 4 days delivery'
+  ],
+  options: [
+    {
+      type: 'color',
+      label: 'Colour',
+      id: 'color',
+      col: {
+      lg: 4,
+      def: 12
+    },
+      list: ['#ccc', '#6610f2', '#fd7e14', '#17a2b8','#ccc', '#6610f2', '#fd7e14', '#17a2b8']
+    },
+    {
+      type: 'select',
+      label: 'Size',
+      id: 'size',
+      placeholder: 'Select Size',
+      col: {
+      lg: 4,
+      def: 12
+    },
+      list: ['xl', 'xxl', 'l', 'm']
+    },
+    {
+      type: 'number',
+      label: 'Qty',
+      id: 'qty',
+      col: {
+      lg: 2,
+      def: 12
+    },
+      default: '1',
+      min: 1,
+      max: 10
+    }
+  ]
+} %}
+
+{% block content %}
+
+  {{ components.mask() }}
+
+  <main class="main" role="main">
+
+    <div class="container">
+      <div class="product">
+
+        {{ components.breadcrumbs(breadcrumbsList) }}
+
+        <div class="product__card">
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <div class="product__slider">
+                <img src="{{ product.image }}" alt="">
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <div class="product__details">
+                <div class="product__intro">
+                  <div class="product__title">{{ product.title }}</div>
+
+                  <div class="product__review">
+                    {{ components.rate('product__rate', product.rate) }}
+                    {{ components.share('product__share') }}
+                  </div>
+
+                  <div class="product__price">
+                    {% if product.price.old %}
+                      <div class="product__price-old">£{{ product.price.old }}</div>
+                    {% endif %}
+                    <div class="product__price-label">£{{ product.price.origin }}</div>
+                  </div>
+
+                  <ul class="product__attributes">
+                    {% for attribute in product.attributes %}
+                      <li class="product__attributes-item">
+                        <div class="product__attributes-title">{{ attribute.title }}:</div>
+                        {% if attribute.description %}
+                          <div class="product__attributes-description">{{ attribute.description }}</div>
+                        {% endif %}
+
+                        {% if attribute.tags %}
+                          {% for tags in attribute.tags %}
+                            <a href="{{ tags.route }}" class="product__attributes-description product__attributes-tags">
+                              {{ tags.label }}
+                            </a>
+                          {% endfor %}
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+
+                  <div class="product__short-description">
+                    {{ product.shortDescription }}
+                  </div>
+
+                  <ul class="product__benefits">
+                    {% for benefits in product.benefits %}
+                      <li class="product__benefits-item">{{ benefits }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+
+                <div class="product__options">
+
+                  <div class="row">
+
+                    {% for option in  product.options %}
+
+                      <div class="product__options-item col-{{ option.col.def }} col-lg-{{ option.col.lg }}">
+
+                        <label class="product__options-label" for="{{ option.id }}">{{ option.label }}</label>
+
+                        {% if option.type == 'color' %}
+
+                          <div class="color">
+                            {% for color in option.list %}
+
+                              <div style="background: {{ color }}" class="color__item"></div>
+
+                            {% endfor %}
+                          </div>
+
+                        {% endif %}
+
+                        {% if option.type == 'select' %}
+
+                          <select id="{{ option.id }}" class="input input--select" name="{{ option.id }}">
+
+                            <option selected disabled>{{ option.placeholder }}</option>
+
+                            {% for size in option.list %}
+
+                              <option value="{{ size }}">{{ size }}</option>
+
+                            {% endfor %}
+
+                          </select>
+
+                        {% endif %}
+
+                        {% if option.type == 'number' %}
+
+                          <input id="{{ option.id }}"
+                                 min="{{ option.min }}"
+                                 max="{{ option.max }}"
+                                 class="input input--number"
+                                 type="number"
+                                 value="{{ option.default }}">
+
+                        {% endif %}
+                      </div>
+
+                    {% endfor %}
+
+                  </div>
+                </div>
+
+                <div class="product__buttons">
+                  <div class="row">
+
+                    <div class="col-12 col-lg-5">
+                      <div class="btn btn--dark btn--xl">
+                        <div class="btn__icon">
+                          <svg class="icon">
+                            <use xlink:href="#icon-card"></use>
+                          </svg>
+                        </div>
+                        <div class="btn__label">Add to Cart</div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-lg-7">
+                      <div class="btn btn--blue btn--xl">
+                        <div class="btn__icon">
+                          <svg class="icon">
+                            <use xlink:href="#icon-like"></use>
+                          </svg>
+                        </div>
+                        <div class="btn__label">Add to LookBook</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+{% endblock %}

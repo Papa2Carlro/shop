@@ -1,4 +1,6 @@
 .header {
+  $parent: &;
+
   &__line {
     height: $line;
 
@@ -52,6 +54,12 @@
     }
   }
 
+  &__currency {
+    @include s400-6;
+
+    color: $gray9;
+  }
+
   // Body
   &__body {
     display: flex;
@@ -61,14 +69,118 @@
   }
 
   &__nav {
-    margin: 0 0 0 auto;
+    margin: map-get($spacers, 5) 0 0 auto;
+    padding: 0 0 0 map-get($spacers, 10);
+
+    &-list {
+      @include list-unstyled;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      padding: 0 0 0 map-get($spacers, 10);
+    }
+
+    &-label {
+      @include s500-6;
+
+      color: $gray15;
+
+      text-transform: uppercase;
+    }
+
+    &-chevron {
+      color: $gray6;
+      transition: color $transTimeFast $easeDefault;
+    }
+
+    &-item {
+      position: relative;
+
+      &:hover {
+        #{$parent} {
+          &__nav {
+            &-label, &-chevron {
+              color: $blue1;
+              text-decoration: none;
+            }
+          }
+
+          &__drop {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+
+      & + & {
+        padding: 0 0 0 map-get($spacers, 50);
+      }
+    }
+  }
+
+  &__logo {
+    min-width: 237px;
+  }
+
+  &__drop {
+    position: absolute;
+    z-index: 2;
+
+    width: max-content;
+    top: 100%;
+
+    background: $white;
+
+    padding: map-get($spacers, 30);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transTimeFast $easeOut;
+
+    box-shadow: 0 17px 24px rgba(0, 0, 0, 0.14);
 
     &-list {
       @include list-unstyled;
     }
 
-    &-item {
+    &-box {
+      & + & {
+        padding: 0 0 0 map-get($spacers, 80);
+      }
+    }
 
+    &-menu {
+      display: flex;
+    }
+
+    &-title {
+      @include s600-5;
+
+      color: $gray12;
+      white-space: nowrap;
+      text-transform: uppercase;
+
+      padding: 0 0 map-get($spacers, 20) 0;
+    }
+
+    &-item {
+      @include s400-6;
+
+      color: $gray11;
+      white-space: nowrap;
+
+      & + & {
+        margin-top: map-get($spacers, 5);
+      }
+    }
+
+    &--right {
+      left: 0;
+    }
+
+    &--left {
+      right: 0;
     }
   }
 
@@ -91,5 +203,54 @@
         color: $gray11;
       }
     }
+  }
+
+  &__banner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+
+    color: $white;
+    background-color: $gray14;
+
+    line-height: (48/36);
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+
+    margin: map-get($spacers, 60) 0 0;
+    padding: map-get($spacers, 50);
+
+    &-title {
+      @include s500-13;
+    }
+
+    &-text {
+      @include s400-13;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__logo {
+      min-width: 180px;
+    }
+
+    &__search {
+      padding: 0 0 0 map-get($spacers, 40);
+    }
+
+    &__nav {
+      &-item {
+        & + & {
+          padding: 0 0 0 map-get($spacers, 15);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    display: none;
   }
 }

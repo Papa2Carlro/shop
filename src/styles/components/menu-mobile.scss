@@ -1,0 +1,70 @@
+.menu-mobile {
+  $header: 55px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(#000, .67);
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .22);
+  z-index: 11;
+
+  opacity: 0;
+  visibility: hidden;
+
+  &__panel {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    border-radius: 3px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    background: $white;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: $header;
+
+    box-shadow: 0 5px 10px rgba(0,0,0,.12);
+
+    padding: 0 map-get($spacers, 20);
+  }
+
+  &__sign-in {
+    display: flex;
+    align-items: center;
+
+    &-icon {
+      padding: 0 map-get($spacers, 10) 0 0;
+    }
+
+    &-label {
+      @include s500-8;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    padding: map-get($spacers, 10);
+  }
+
+  &__body {
+    padding: 0 map-get($spacers, 20);
+  }
+
+  &--isOpen {
+    opacity: 1;
+    visibility: visible;
+  }
+}

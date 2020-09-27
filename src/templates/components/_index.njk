@@ -1,0 +1,292 @@
+{% set menu = [
+  {
+    label: 'mens',
+    router: '#',
+    list: [
+    {
+      title: 'casuals',
+      listl2: [
+      {
+        label: 'Jackets',
+        router: '#'
+      },
+      {
+        label: 'Hoodies & Sweatshirts',
+        router: '#'
+      },
+      {
+        label: 'Polo Shirts',
+        router: '#'
+      },
+      {
+        label: 'Sportswear',
+        router: '#'
+      },
+      {
+        label: 'Trousers & Chinos',
+        router: '#'
+      },
+      {
+        label: 'T-Shirts',
+        router: '#'
+      }
+    ]
+    },
+    {
+      title: 'Formal',
+      listl2: [
+      {
+        label: 'Jackets',
+        router: '#'
+      },
+      {
+        label: 'Shirts',
+        router: '#'
+      },
+      {
+        label: 'Suits',
+        router: '#'
+      },
+      {
+        label: 'Trousers',
+        router: '#'
+      }
+    ]
+    }
+  ]
+  },
+  {
+    label: 'womens',
+    router: '#',
+    list: [
+    {
+      title: 'casuals',
+      listl2: [
+      {
+        label: 'Jackets',
+        router: '#'
+      },
+      {
+        label: 'Hoodies & Sweatshirts',
+        router: '#'
+      },
+      {
+        label: 'Polo Shirts',
+        router: '#'
+      },
+      {
+        label: 'Sportswear',
+        router: '#'
+      },
+      {
+        label: 'Trousers & Chinos',
+        router: '#'
+      },
+      {
+        label: 'T-Shirts',
+        router: '#'
+      }
+    ]
+    },
+    {
+      title: 'Formal',
+      listl2: [
+      {
+        label: 'Jackets',
+        router: '#'
+      },
+      {
+        label: 'Shirts',
+        router: '#'
+      },
+      {
+        label: 'Suits',
+        router: '#'
+      },
+      {
+        label: 'Trousers',
+        router: '#'
+      }
+    ]
+    }
+  ]
+  },
+  {
+    label: 'the brand',
+    router: '#'
+  },
+  {
+    label: 'local stores',
+    router: '#'
+  },
+  {
+    label: 'look book',
+    router: '#',
+    list: [
+    {
+      title: 'Our Lookbooks',
+      listl2: [
+      {
+        label: 'Latest Posts (mixed)',
+        router: '#'
+      },
+      {
+        label: 'Men’s Lookbook',
+        router: '#'
+      },
+      {
+        label: 'Women’s Lookbook',
+        router: '#'
+      }
+    ]
+    },
+    {
+      title: 'Your Lookbook',
+      listl2: [
+      {
+        label: 'View and Edit',
+        router: '#'
+      },
+      {
+        label: 'Share',
+        router: '#'
+      },
+      {
+        label: 'Delete',
+        router: '#'
+      }
+    ]
+    }
+  ]
+  }
+] %}
+
+
+{% macro navigation() %}
+  <nav class="header__nav">
+    <ul class="header__nav-list">
+      {% for nav in menu %}
+        <li class="header__nav-item">
+          <a href="{{ nav.router }}" class="header__nav-label link link--blue">{{ nav.label }}</a>
+          {% if nav.list %}
+            <span class="header__nav-chevron">
+              <svg class="icon icon-miniChevron">
+                <use xlink:href="#icon-chevron"></use>
+              </svg>
+            </span>
+
+            <div class="header__drop header__drop--right">
+              <div class="header__drop-menu">
+                {% for level2 in nav.list %}
+
+                  <div class="header__drop-box">
+                    <div class="header__drop-title">{{ level2.title }}</div>
+
+                    <ul class="header__drop-list">
+                      {% for l2list in level2.listl2 %}
+                        <li class="header__drop-item">
+                          <a href="{{ l2list.router }}" class="link link--blue">{{ l2list.label }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+
+                {% endfor %}
+              </div>
+
+              <a href="#" class="header__banner">
+                <div class="header__banner-title link">Autumn sale!</div>
+                <div class="header__banner-text link">up to 50% off</div>
+              </a>
+            </div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endmacro %}
+
+{% macro mask() %}
+  <div class="mask"></div>
+{% endmacro %}
+
+{% macro breadcrumbs(list) %}
+
+  <div class="breadcrumbs">
+    {% for item in list %}
+      {% if item.router %}
+        <a href="{{ item.router }}" class="breadcrumbs__item link link--grey">
+          {{ item.label }}
+        </a>
+      {% else %}
+        <div class="breadcrumbs__item">
+          {{ item.label }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+{% endmacro %}
+
+{% macro rate(class, settings) %}
+
+  <div class="{{ class }}">
+    <div class="rate">
+
+      {% for i in range(0, settings.length) -%}
+        <div class="rate__star
+          {% if i < settings.marked %}
+          rate__star--marked
+          {% endif %}
+          ">
+          <svg class="icon icon-star">
+            <use xlink:href="#icon-star"></use>
+          </svg>
+        </div>
+      {%- endfor %}
+
+      <div class="rate__label">
+        {{ settings.marked }} Review(s)
+      </div>
+
+    </div>
+  </div>
+
+{% endmacro %}
+
+{% macro share(class) %}
+  {% set shareIcon = [
+    {
+      icon: 'facebook-1',
+      router: '#'
+    },
+    {
+      icon: 'twitter-1',
+      router: '#'
+    },
+    {
+      icon: 'google-plus',
+      router: '#'
+    },
+    {
+      icon: 'pinterest',
+      router: '#'
+    },
+    {
+      icon: 'instagram',
+      router: '#'
+    }
+  ] %}
+
+  <div class="{{ class }}">
+    <div class="share">
+      <div class="share__label">Share: </div>
+
+      {% for share in shareIcon %}
+        <a href="{{ share.router }}" class="fi flaticon-{{ share.icon }} link link--grey"></a>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endmacro %}
+

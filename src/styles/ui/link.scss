@@ -2,14 +2,24 @@
   color: currentColor;
   transition: color $transTimeFast $easeDefault;
 
+  .icon {
+    fill: currentColor;
+    transition: color $transTimeFast $easeDefault;
+  }
+
   &:active {
     color: $gray10;
     text-decoration: none;
+
+    .icon {
+      fill: $gray10;
+    }
   }
 
   @include media-breakpoint-up(md) {
     &:hover {
       color: $gray10;
+      fill: $gray10;
       text-decoration: none;
     }
   }
@@ -18,10 +28,57 @@
     color: currentColor;
     transition: color $transTimeFast $easeDefault;
 
+    .icon {
+      fill: currentColor;
+      transition: color $transTimeFast $easeDefault;
+    }
+
     @include media-breakpoint-up(md) {
       &:hover {
         color: $blue1;
         text-decoration: none;
+
+        .icon {
+          fill: $blue1;
+        }
+      }
+    }
+  }
+
+  &--white {
+    color: $white;
+    transition: color $transTimeFast $easeDefault;
+
+    .icon {
+      fill: $white;
+      transition: color $transTimeFast $easeDefault;
+    }
+
+    &:hover {
+      color: $gray6;
+      text-decoration: none;
+
+      .icon {
+        fill: $gray6;
+      }
+    }
+  }
+
+  &--grey {
+    color: $gray8;
+    transition: color $transTimeFast $easeDefault;
+
+    .icon {
+      fill: $white;
+      transition: color $transTimeFast $easeDefault;
+    }
+
+    &:hover {
+      color: $gray11;
+      text-decoration: none;
+
+      .icon {
+        fill: $gray6;
       }
     }
   }

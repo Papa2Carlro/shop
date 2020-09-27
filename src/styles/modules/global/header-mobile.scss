@@ -1,0 +1,131 @@
+.header-mobile {
+  $menu: 56px;
+
+  background: $blue2;
+  height: $menu;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    @include s400-11;
+
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    &-title {
+      @include s500-11;
+    }
+  }
+
+  &__actions {
+    @include list-unstyled;
+
+    display: flex;
+
+    padding: 0 map-get($spacers, 10);
+
+    &-item {
+      padding: map-get($spacers, 10);
+    }
+
+    &-btn {
+      .icon {
+        width: 23px;
+        height: 23px;
+
+        fill: $white;
+      }
+    }
+  }
+
+  &__search {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: $blue2;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: color $transTimeFast $easeDefault;
+
+    &-input {
+      @include s400-8;
+
+      width: 75%;
+
+      border-radius: 8px;
+      border: 1px solid #c4c4c4;
+
+      padding: map-get($spacers, 5) map-get($spacers, 15) map-get($spacers, 5) map-get($spacers, 45);
+    }
+
+    &-close {
+      position: relative;
+
+      padding: map-get($spacers, 10);
+
+      left: 42px;
+    }
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+
+  @include media-breakpoint-down(md) {
+    &__logo {
+      @include s400-7;
+
+      &-title {
+        @include s500-7;
+      }
+    }
+
+    &__actions {
+      padding: 0 map-get($spacers, 5);
+
+      &-item {
+        padding: map-get($spacers, 5);
+      }
+
+      &-btn {
+        .icon {
+          width: 20px;
+          height: 20px;
+
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__logo {
+      @include s400-6;
+
+      &-title {
+        @include s500-6;
+      }
+    }
+  }
+}

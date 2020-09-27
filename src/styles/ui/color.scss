@@ -1,0 +1,17 @@
+.color {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__item {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba($black, .2);
+
+    margin: 0 map-get($spacers, 5) map-get($spacers, 5) 0;
+  }
+}

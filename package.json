@@ -4,7 +4,7 @@
   "description": "A light foundation for your next frontend project based on webpack.",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js  --colors",
-    "front": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
+    "dev": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
     "gulp": "gulp"
   },
   "repository": {

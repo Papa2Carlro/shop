@@ -1,0 +1,21 @@
+.share {
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: '|';
+
+    padding: 0 map-get($spacers, 15);
+  }
+
+  &__label {
+    @include s500-6;
+    color: $gray10;
+
+    padding: 0 map-get($spacers, 10) 0 0;
+  }
+
+  .fi + .fi {
+      padding: 0 0 0 map-get($spacers, 20);
+  }
+}

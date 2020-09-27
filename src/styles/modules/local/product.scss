@@ -1,0 +1,140 @@
+.product {
+  &__card {
+    padding: map-get($spacers, 20) 0 0;
+  }
+
+  &__slider {
+    height: 710px;
+  }
+
+  &__title {
+    @include s500-9;
+
+    color: $gray12;
+    line-height: (20/18);
+    text-transform: uppercase;
+  }
+
+  &__review {
+    display: flex;
+    align-items: center;
+
+    padding: map-get($spacers, 20) 0 0;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+
+    @include s400-11;
+
+    color: $gray8;
+    letter-spacing: 1.5px;
+
+    padding: map-get($spacers, 25) 0 0;
+
+    &-old {
+      text-decoration: line-through;
+
+      padding: 0 map-get($spacers, 30) 0 0;
+    }
+  }
+
+  &__attributes {
+    @include list-unstyled;
+
+    padding: map-get($spacers, 45) 0 0;
+
+    &-item + &-item {
+      padding: map-get($spacers, 5) 0 0;
+    }
+
+    &-title {
+      display: inline-block;
+
+      color: $gray12;
+      text-transform: uppercase;
+      font-family: Roboto, sans-serif;
+
+      @include s500-6;
+    }
+
+    &-description {
+      display: inline-block;
+
+      color: #8c8c8c;
+      @include s500-6;
+    }
+
+    &-tags {
+      color: $blue1;
+
+      & + & {
+        &:before {
+          content: ',';
+        }
+      }
+
+      &:hover {
+        color: $blue2;
+      }
+    }
+  }
+
+  &__short-description {
+    padding: map-get($spacers, 35) 0 0;
+
+    @include s400-7;
+
+    color: $gray5;
+    line-height: (22/16);
+    font-family: Roboto, sans-serif;
+  }
+
+  &__benefits {
+    @include list-unstyled;
+
+    @include s400-7;
+
+    color: $gray5;
+    line-height: (21/16);
+    letter-spacing: 0.6px;
+    font-family: Roboto, sans-serif;
+
+    padding: map-get($spacers, 15) 0 0;
+
+    &-item {
+      &:before {
+        content: '-';
+        display: inline-block;
+        padding: 0 map-get($spacers, 5) 0 0;
+      }
+    }
+  }
+
+  &__options {
+    padding: map-get($spacers, 45) 0 0;
+
+    &-label {
+      @include s500-5;
+
+      color: $gray12;
+      text-transform: uppercase;
+
+      padding: 0 0 map-get($spacers, 15);
+      margin-bottom: 0;
+    }
+  }
+
+  &__buttons {
+    padding: map-get($spacers, 60) 0 0;
+
+    display: flex;
+    margin: 0 -12px;
+
+    .btn {
+      width: 100%;
+      margin: 0 12px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.rate {
+  display: flex;
+  align-items: center;
+
+  &__star {
+    & + & {
+      padding: 0 0 0 2px;
+    }
+
+    &--marked {
+      .icon {
+        fill: $yellow;
+      }
+    }
+  }
+
+  &__label {
+    @include s500-6;
+
+    padding: 0 0 0 map-get($spacers, 10);
+  }
+}

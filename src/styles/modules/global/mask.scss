@@ -1,0 +1,14 @@
+.mask {
+  &--opacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: #000;
+    opacity: .67;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .22);
+    z-index: 1;
+  }
+}
